@@ -1,7 +1,4 @@
-import json
 import requests
-from openrouteservice import client
-
 
 def transform_data(input_data) -> dict:
     """
