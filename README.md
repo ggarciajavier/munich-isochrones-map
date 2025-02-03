@@ -14,11 +14,11 @@ The tool uses OpenRouteService isochrones to identify areas of the city that mee
 
 ### Customization
 
-The code can be adjusted to show other areas of the city, such as:
+The code can be adjusted to show other areas within a given distance from other points of interest, such as:
 
-- **🚗 Driving**: 15-minute drive from a school
-- **🛒 Groceries**: 5-minute walk from a supermarket
-- **🚍 Commuting**: 30-minute commute with public transport to your office
+- **🏫 Schools**, e.g. a 15-minute drive from a school
+- **🛒 Groceries**, e.g. a 5-minute walk from a supermarket
+- **🏢 Your office**, e.g. 30-minute commute with public transport to your office
 
 Feel free to modify the code to suit your needs!
 
@@ -53,9 +53,8 @@ pip install -r requirements.txt
 ### Configuration
 1. Get API key from [OpenRouteService](https://api.openrouteservice.org/)
 2. Create `config.py`: `API_KEY = 'your_api_key_here'`
-3. Define your own coordinates box from [bboxfinder](https://bboxfinder.com/) (optional)
-
-You can change the type of nodes of interest in OSM (e.g. looking for schools instead of subway stations) or add more layers directly in the code.
+3. Get your own coordinates' box from [bboxfinder](https://bboxfinder.com/) (optional)
+4. Define a new coordinates' box and other parameters in `constants.py`
 
 ### Run
 ```bash
