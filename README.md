@@ -1,35 +1,66 @@
-# Munich Isochrones Map
+# 🗺️ Munich Isochrones Map
 
-Interactive map showing walking and cycling times from Munich subway stations using OpenStreetMap and OpenRouteService API.
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![OpenRouteService](https://img.shields.io/badge/API-OpenRouteService-green.svg)](https://openrouteservice.org/)
 
-## Setup
+## 🎯 Project Overview
 
-```powershell
+A personal project to optimize apartment hunting in Munich using geospatial analysis. The tool uses OpenRouteService isochrones to identify areas that meet specific location criteria, e.g.:
+
+- **🚶‍♂️ Walking**: Within 10 minutes of a subway station
+- **🚲 Cycling**: Within 20 minutes to Munich Hauptbahnhof
+
+## 🛠️ Tech Stack
+
+- **OpenRouteService API**: Isochrone calculations
+- **OpenStreetMap**: Base map data
+- **Folium**: Interactive map visualization
+- **Python**: Data processing
+
+## 📁 Structure
+
+```bash
+├── config.py           # API key for OpenRouteService (not included)
+├── constants.py                # Script constants
+├── create_isochrones_map.py    # Main script
+├── helpers.py                  # Helper functions
+└── maps/                       # Output directory for maps
+    └── isochrones_map.html
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+```bash
 python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Structure
+### Configuration
+1. Get API key from [OpenRouteService](https://api.openrouteservice.org/)
+2. Create `config.py`:
 
-```
-├── config.py                   # API key for OpenRouteService
-├── constants.py                # Script constants
-├── create_isochrones_map.py    # Main script
-├── helpers.py                  # Helper functions
-└── maps/                       # Output directory
-    └── isochrones_map.html
+```python
+API_KEY = 'your_api_key_here'
 ```
 
-## Usage
+### Run
+```bash
+python create_isochrones_map.py
+```
 
-1. Set your OpenRouteService API key in `constants.py`.
-2. Run the generator: `python create_isochrones_map.py`.
+## 🗺️ Output
+The script generates an interactive map showing:
 
-The script will:
+- 🔵 10-minute walking radius (blue)
+- 🔴 20-minute cycling radius (red)
+- 🚇 Munich subway stations
 
-- Fetch subway stations within the given box (e.g., 48.0613°N to 48.1892°N, 11.4663°E to 11.7293°E).
-- Generate isochrones for:
-  - 10 minute walking radius (blue)
-  - 20 minute cycling radius (red)
-- Create interactive map at `isochrones_map.html`isochrones_map.html
+<div style="text-align: center;">
+  <iframe src="./maps/isochrones_map.html" width="90%" height="400px"></iframe>
+</div>
+
+---
+_Built with ❤️ in Munich_
