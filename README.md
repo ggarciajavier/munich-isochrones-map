@@ -58,7 +58,7 @@ The script generates an interactive map showing:
 - 🔴 20-minute cycling radius (red)
 - 🚇 Munich subway stations
 
-![Munich Isochrones Map Preview](.\maps\map_preview.png)
+![Munich Isochrones Map Preview](./maps/map_preview.png)
 
 ---
 _Built with ❤️ in Munich_
